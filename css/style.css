@@ -1,0 +1,437 @@
+/* -------------------------------
+   GLOBAL RESET & BASE (DRY Principle)
+   ------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  color: #1e293b;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* -------------------------------
+   TYPOGRAPHY
+   ------------------------------- */
+h1, h2, h3 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* -------------------------------
+   HEADER (Flexbox)
+   ------------------------------- */
+.header {
+  background: #0f172a;
+  border-bottom: 3px solid #3b82f6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.logo__text {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.logo__highlight {
+  color: #3b82f6;
+}
+
+.logo__badge {
+  background: #3b82f6;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Navigation */
+.nav__list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav__link {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav__link:hover,
+.nav__link--active {
+  color: #3b82f6;
+}
+
+/* -------------------------------
+   HERO SECTION (Grid)
+   ------------------------------- */
+.hero {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero__tagline {
+  display: inline-block;
+  background: #3b82f6;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.hero__title {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero__title-accent {
+  color: #3b82f6;
+  font-size: 2rem;
+  display: block;
+}
+
+.hero__description {
+  font-size: 1.125rem;
+  color: #334155;
+  margin: 1.5rem 0;
+}
+
+/* Buttons (BEM) */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+  margin-right: 1rem;
+}
+
+.btn--primary {
+  background: #3b82f6;
+  color: white;
+  border: 2px solid #3b82f6;
+}
+
+.btn--primary:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: #1e293b;
+  border: 2px solid #3b82f6;
+}
+
+.btn--secondary:hover {
+  background: #3b82f610;
+}
+
+.hero__img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+}
+
+/* -------------------------------
+   SECTION HEADER (Reusable)
+   ------------------------------- */
+.section-header {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.section-header--centered {
+  text-align: center;
+}
+
+.section-header__subtitle {
+  color: #3b82f6;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.section-header__title {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-header__desc {
+  color: #475569;
+  font-size: 1.125rem;
+  max-width: 700px;
+}
+
+/* -------------------------------
+   BLUEPRINT SECTION (GRID)
+   ------------------------------- */
+.blueprint {
+  padding: 5rem 0;
+  background: white;
+}
+
+.blueprint__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* Card Component (BEM) */
+.card {
+  background: #f8fafc;
+  padding: 1.75rem;
+  border-radius: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e2e8f0;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -12px rgba(0,0,0,0.15);
+}
+
+.card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.card__title {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.card__desc {
+  color: #475569;
+}
+
+/* -------------------------------
+   IPO SECTION (FLEXBOX)
+   ------------------------------- */
+.ipo {
+  padding: 5rem 0;
+  background: #f1f5f9;
+}
+
+.ipo__flex {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.ipo-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 4px 6px -2px rgba(0,0,0,0.05);
+  border-bottom: 4px solid #3b82f6;
+}
+
+.ipo-card__number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+
+.ipo-card__title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.ipo-card__text {
+  color: #475569;
+}
+
+/* -------------------------------
+   CHECKLIST SECTION
+   ------------------------------- */
+.checklist {
+  padding: 5rem 0;
+  background: white;
+}
+
+.checklist__grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: start;
+}
+
+.checklist__list {
+  list-style: none;
+}
+
+.checklist__item {
+  padding: 0.75rem 0;
+  font-size: 1.05rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.badge--architect {
+  background: #0f172a;
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 320px;
+  border-left: 5px solid #3b82f6;
+}
+
+.badge__quote {
+  display: block;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.badge__author {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* -------------------------------
+   FOOTER (Grid + Flex)
+   ------------------------------- */
+.footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 3rem 0 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer__logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.footer__tagline {
+  color: #3b82f6;
+  margin-bottom: 0.75rem;
+}
+
+.footer__quote {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.footer__heading {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.footer__list {
+  list-style: none;
+}
+
+.footer__item {
+  margin-bottom: 0.5rem;
+}
+
+.footer__bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #1e293b;
+  font-size: 0.85rem;
+}
+
+/* -------------------------------
+   RESPONSIVE DESIGN
+   ------------------------------- */
+@media (max-width: 768px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .checklist__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav__list {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.75rem;
+  }
+  
+  .header__inner {
+    flex-direction: column;
+  }
+  
+  .hero__title {
+    font-size: 2rem;
+  }
+  
+  .section-header {
+    text-align: center;
+  }
+  
+  .section-header__desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
