@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Frontend Developer Industrial Training Project - Static Webpage Design by DecodeLabs">
+  <title>DecodeLabs | Frontend Engineering Foundations</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Preload hero image to reduce layout shift -->
+  <link rel="preload" as="image" href="https://placehold.co/1200x400/1a2a3a/white?text=DecodeLabs+Hero" imagesrcset="https://placehold.co/1200x400/1a2a3a/white?text=DecodeLabs+Hero">
+</head>
+<body>
+
+  <!-- HEADER SECTION (Semantic) -->
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">
+        <span class="logo__text">Decode<span class="logo__highlight">Labs</span></span>
+        <span class="logo__badge">2026</span>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link nav__link--active">Home</a></li>
+          <li class="nav__item"><a href="#blueprint" class="nav__link">Blueprint</a></li>
+          <li class="nav__item"><a href="#checklist" class="nav__link">Checklist</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="home">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="hero__tagline">Industrial Training Kit</span>
+          <!-- ONLY ONE H1 PER PAGE (W3C valid) -->
+          <h1 class="hero__title">Frontend Development<br><span class="hero__title-accent">Project 1: Static Webpage Design</span></h1>
+          <p class="hero__description">
+            Semantic integrity. Visual architecture. Technical precision.<br>
+            Before dynamic logic, master the foundation.
+          </p>
+          <div class="hero__actions">
+            <a href="#checklist" class="btn btn--primary">View Requirements</a>
+            <a href="#blueprint" class="btn btn--secondary">Explore Blueprint</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <!-- Explicit width/height to prevent CLS -->
+          <img src="https://placehold.co/600x400/0d2b3e/white?text=IPO+Model:+Input+→+Process+→+Output" 
+               alt="IPO Model diagram showing Input, Process, Output stages for frontend engineering"
+               width="600"
+               height="400"
+               class="hero__img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Blueprint Section (Semantic tags) -->
+    <section id="blueprint" class="blueprint">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__subtitle">The Skeleton</span>
+          <h2 class="section-header__title">Machine Readability & Semantic Architecture</h2>
+          <p class="section-header__desc">Semantic tags describe content explicitly to browsers and screen readers.</p>
+        </div>
+
+        <!-- GRID for page structure -->
+        <div class="blueprint__grid">
+          <article class="card card--semantic">
+            <div class="card__icon">📐</div>
+            <h3 class="card__title">Document Outline</h3>
+            <p class="card__desc">Proper heading hierarchy: One &lt;h1&gt;, followed by &lt;h2&gt; to &lt;h6&gt;. Logical flow for accessibility.</p>
+          </article>
+          <article class="card card--semantic">
+            <div class="card__icon">🧩</div>
+            <h3 class="card__title">BEM Methodology</h3>
+            <p class="card__desc">Block__Element--Modifier. One component defined once, used everywhere. DRY principle.</p>
+          </article>
+          <article class="card card--semantic">
+            <div class="card__icon">⚙️</div>
+            <h3 class="card__title">Separation of Concerns</h3>
+            <p class="card__desc">No inline styles. External CSS only. Maintainability over shortcuts.</p>
+          </article>
+          <article class="card card--semantic">
+            <div class="card__icon">🎯</div>
+            <h3 class="card__title">Layout Systems</h3>
+            <p class="card__desc">GRID for macro page structure. FLEXBOX for component-level alignment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- IPO Model Section (Flexbox example) -->
+    <section class="ipo">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <h2 class="section-header__title">The Engineering Mindset: IPO Model</h2>
+          <p class="section-header__desc">Debug by isolating the stage: Input → Process → Output</p>
+        </div>
+        <!-- FLEXBOX for component alignment -->
+        <div class="ipo__flex">
+          <div class="ipo-card">
+            <div class="ipo-card__number">01</div>
+            <h3 class="ipo-card__title">Input</h3>
+            <p class="ipo-card__text">Images, Icons, Text, Data</p>
+          </div>
+          <div class="ipo-card">
+            <div class="ipo-card__number">02</div>
+            <h3 class="ipo-card__title">Process</h3>
+            <p class="ipo-card__text">Box Model, Logic, Layout Engine</p>
+          </div>
+          <div class="ipo-card">
+            <div class="ipo-card__number">03</div>
+            <h3 class="ipo-card__title">Output</h3>
+            <p class="ipo-card__text">Pixel-Perfect Render</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checklist Section -->
+    <section id="checklist" class="checklist">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__subtitle">Quality Gate</span>
+          <h2 class="section-header__title">Project 1: Requirements Checklist</h2>
+          <p class="section-header__desc">Code does not ship until it passes inspection.</p>
+        </div>
+
+        <div class="checklist__grid">
+          <ul class="checklist__list">
+            <li class="checklist__item">✅ IA: Logical Sitemap defined first</li>
+            <li class="checklist__item">✅ HTML: Semantic tags (header, main, footer). One h1</li>
+            <li class="checklist__item">✅ CSS: External files only. DRY principle. No IDs for styling</li>
+            <li class="checklist__item">✅ LAYOUT: Grid for macro page, Flexbox for micro components</li>
+            <li class="checklist__item">✅ ASSETS: WebP/AVIF with explicit width/height (no CLS)</li>
+            <li class="checklist__item">✅ VALIDATION: Pass W3C Validator + Lighthouse Audit</li>
+          </ul>
+          <div class="checklist__badge">
+            <div class="badge badge--architect">
+              <span class="badge__quote">"The frontend is the only part the world will ever see."</span>
+              <span class="badge__author">— DecodeLabs Engineering</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER SECTION -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="footer__logo">DecodeLabs</span>
+          <p class="footer__tagline">Engineering Foundations • Batch 2026</p>
+          <p class="footer__quote">Build it well, for the frontend is the only part of the system the world will ever see.</p>
+        </div>
+        <div class="footer__contact">
+          <h3 class="footer__heading">Contact</h3>
+          <ul class="footer__list">
+            <li class="footer__item">📞 +91 89330 06408</li>
+            <li class="footer__item">✉️ decodelabs.tech@gmail.com</li>
+            <li class="footer__item">🌐 www.decodelabs.tech</li>
+            <li class="footer__item">📍 Greater Lucknow, India</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 DecodeLabs. All rights reserved. Semantic • Accessible • Maintainable</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
